@@ -21,13 +21,13 @@ spring:
     baseline-version: 0
 grpc:
   server:
-    port: ${PLAN_SERVICE_GRPC_PORT:9031} # default: 9090
+    port: ${PLAN_COMMAND_SERVICE_GRPC_PORT:9031} # default: 9090
     keep-alive-timeout: 60
     keep-alive-time: 600
     max-inbound-message-size: 104857600 # TODO: message chunking
   client:
     jobService:
-      address: dns:///${JOB_SERVICE_HOST:localhost}:${JOB_SERVICE_GRPC_PORT:9100}
+      address: dns:///${JOB_COMMAND_SERVICE_HOST:localhost}:${JOB_COMMAND_SERVICE_GRPC_PORT:9100}
       enableKeepAlive: true
       keepAliveWithoutCalls: true
       negotiationType: PLAINTEXT
@@ -35,7 +35,7 @@ grpc:
       keep-alive-time: 600
       max-inbound-message-size: 104857600 # TODO: message chunking
 server:
-  port: ${PLAN_SERVICE_PORT:7999}
+  port: ${PLAN_COMMAND_SERVICE_PORT:7999}
 core:
   kafka: # kafkaプロパティ
     bootstrap:
