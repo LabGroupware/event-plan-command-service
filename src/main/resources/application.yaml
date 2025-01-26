@@ -27,7 +27,7 @@ grpc:
     max-inbound-message-size: 104857600 # TODO: message chunking
   client:
     jobService:
-      address: dns:///${JOB_COMMAND_SERVICE_HOST:localhost}:${JOB_COMMAND_SERVICE_GRPC_PORT:9100}
+      address: dns:///${JOB_SERVICE_HOST:localhost}:${JOB_SERVICE_GRPC_PORT:9100}
       enableKeepAlive: true
       keepAliveWithoutCalls: true
       negotiationType: PLAINTEXT
